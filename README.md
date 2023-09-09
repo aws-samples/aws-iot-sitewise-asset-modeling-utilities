@@ -5,14 +5,14 @@
 2. [Prerequisites](#prerequisites)
 3. [How to use?](#how-to-use)
     1. [Prepare your environment](#1-prepare-your-environment)
-    2. [Searching models](#2-search-models)
+    2. [Search models](#2-search-models)
     3. [Find model references](#3-find-model-references)
     4. [Retrieve asset hierarchy](#4-retrieve-asset-hierarchy)
 
 ## About this Repo
 This repo provides code samples to interact with AWS IoT SiteWise Models and Assets using [AWS SDK for Python (Boto3)](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iotsitewise.html). Using this repo, you can easily search models, find references for a given model and retrieve asset hierarchy.
 
-## Pre-requisities
+## Pre-requisites
 1. An active AWS account
 2. Supported region for AWS IoT SiteWise
 3. IAM user with administrator access to AWS IoT SiteWise
@@ -30,7 +30,7 @@ This repo provides code samples to interact with AWS IoT SiteWise Models and Ass
 ### 2) Search models
 Retrieve a list of models that meet the filtering criteria and export the list to a CSV file.
 
-####Synopsis:
+#### Synopsis:
 ```python
 python3 src/search_models.py 
 [--no-properties]
@@ -38,7 +38,7 @@ python3 src/search_models.py
 [--no-hierarchy-definitions]
 [--no-hierarchy-references]
 ```
-####Options:
+#### Options:
 `--no-properties` (boolean)
 Exclude models with no properties.
 
@@ -51,7 +51,7 @@ Exclude models with no hierarchy definitions.
 `--no-hierarchy-references` (boolean)
 Exclude models that are not referenced in hierarchy definitions of other models.
 
-####Examples:
+#### Examples:
 `python3 src/search_models.py --no-properties --no-assets`
 
 Output:
@@ -69,16 +69,16 @@ Exported references to /Users/gottraju/aws-iot-sitewise-asset-modeling-utilities
 ### 3) Find model references
 Retrieve a list of references for a given model, which may include assets, hierarchy references, and properties (roll-up metrics), and export the list to a CSV file.
 
-####Synopsis:
+#### Synopsis:
 ```python
 python3 src/model_references.py
 --asset-model-id <value>
 ```
-####Options:
+#### Options:
 `--asset-model-id` (string)
 The ID of the asset model.
 
-####Examples:
+#### Examples:
 `python3 src/model_references.py --asset-model-id ec6d3e7c-9026-4c1c-ac66-e73ba7666c2e`
 
 Output:
@@ -97,19 +97,19 @@ Exported references to /Users/gottraju/aws-iot-sitewise-asset-modeling-utilities
 ### 4) Retrieve asset hierarchy
 Retrieve asset hierarchy for a given asset.
 
-####Synopsis:
+#### Synopsis:
 ```python
 python3 src/asset_hierarchy.py
 --asset-id <value>
 [--all-levels] 
 ```
-####Options:
+#### Options:
 `--asset-id` (string)
 The ID of the asset.
 
 `--all-levels` (boolean)
 Include all lower levels in the asset hierarchy.
-####Examples:
+#### Examples:
 `python3 src/asset_hierarchy.py --asset-id 2c8249d7-9391-4b66-a50d-7b311ea37aec --all-levels`
 
 Output:
