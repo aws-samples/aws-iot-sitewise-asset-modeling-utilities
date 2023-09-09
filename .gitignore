@@ -1,0 +1,5 @@
+# Ignore Mac system files
+*.DS_store
+
+# Ignore all csv files from data and tmp directories
+exported_data/*.csv
